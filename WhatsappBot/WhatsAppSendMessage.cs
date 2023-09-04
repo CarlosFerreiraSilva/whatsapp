@@ -20,27 +20,36 @@ namespace WhatsappBot
         }
         public void SendMessage(string message, List<string> to)
         {
-            StartBrowser(TypeDriver.GoogleChorme);
-
-            Navigate("https://web.whatsapp.com/");
-
-            WaitForLoad();
-
-            Thread.Sleep(TimeSpan.FromSeconds(18));
-
-            foreach (var item in to)
+            try
             {
+                StartBrowser(TypeDriver.GoogleChorme);
 
-                var elementSearch = AssignValue(TypeElement.Xpath, "//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[1]/p", item);
+                Navigate("https://web.whatsapp.com/");
 
-                elementSearch.element.Clear();
+                WaitForLoad();
 
-                elementSearch.element.SendKeys(OpenQA.Selenium.Keys.Enter);
+                Thread.Sleep(TimeSpan.FromSeconds(18));
 
-                var elementMessage = AssignValue(TypeElement.Xpath, "//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]", message);
+                foreach (var item in to)
+                {
+                    Thread.Sleep(TimeSpan.FromSeconds(2));
 
-                elementMessage.element.SendKeys(OpenQA.Selenium.Keys.Enter);
+                    var elementSearch = AssignValue(TypeElement.Xpath, "//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[1]/p", item);
+
+                    elementSearch.element.Clear();
+
+                    elementSearch.element.SendKeys(OpenQA.Selenium.Keys.Enter);
+
+                    var elementMessage = AssignValue(TypeElement.Xpath, "//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]", message);
+
+                    elementMessage.element.SendKeys(OpenQA.Selenium.Keys.Enter);
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Algum erro interno ou contato digitado errado");
+            }
+          
 
         }
     }

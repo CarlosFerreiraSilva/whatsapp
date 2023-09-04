@@ -10,8 +10,8 @@ namespace WhatsappBot
         private void Form1_Load(object sender, EventArgs e)
         {
             listView1.Columns.Add("Contatos",120);
-            WhatsAppSendMessage w = new WhatsAppSendMessage();
-            w.EnterSite();
+            //WhatsAppSendMessage w = new WhatsAppSendMessage();
+            //w.EnterSite();
         }
 
         private void button1_Click(object sender, EventArgs e)
