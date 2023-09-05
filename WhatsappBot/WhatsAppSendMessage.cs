@@ -20,6 +20,7 @@ namespace WhatsappBot
         }
         public void SendMessage(string message, List<string> to)
         {
+            
             StartBrowser(TypeDriver.GoogleChorme);
 
             Navigate("https://web.whatsapp.com/");
@@ -30,16 +31,34 @@ namespace WhatsappBot
 
             foreach (var item in to)
             {
+                try
+                {
 
-                var elementSearch = AssignValue(TypeElement.Xpath, "//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[1]/p", item);
+                    var elementSearch = AssignValue(TypeElement.Xpath, "//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[1]/p", item);
 
-                elementSearch.element.Clear();
+                    elementSearch.element.Clear();
 
-                elementSearch.element.SendKeys(OpenQA.Selenium.Keys.Enter);
+                    elementSearch.element.SendKeys(OpenQA.Selenium.Keys.Enter);
 
-                var elementMessage = AssignValue(TypeElement.Xpath, "//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]", message);
+                    var elementMessage = AssignValue(TypeElement.Xpath, "//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]", message);
 
-                elementMessage.element.SendKeys(OpenQA.Selenium.Keys.Enter);
+                    if (elementMessage.Sucesso == false)
+                    {
+                        MessageBox.Show("Erro");
+                    }
+                    else
+                    {
+                        elementMessage.element.SendKeys(OpenQA.Selenium.Keys.Enter);
+                    }
+
+                   
+                }
+                catch (NullReferenceException ex)
+                {
+
+                    MessageBox.Show("Erro");
+                }
+     
             }
 
         }
