@@ -10,6 +10,13 @@ namespace WhatsappBot
 {
     public class WhatsAppSendMessage : Web
     {
+            private ListView listView;
+
+    public WhatsAppSendMessage(ListView listView)
+    {
+        this.listView = listView;
+    }
+
         public void EnterSite()
         {
             //StartBrowser(TypeDriver.GoogleChorme);
@@ -42,13 +49,18 @@ namespace WhatsappBot
 
                     var elementMessage = AssignValue(TypeElement.Xpath, "//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]", message);
 
+                    ListViewItem newcontato = new ListViewItem();
+
+                    
+
                     if (elementMessage.Sucesso == false)
                     {
-                        MessageBox.Show("Erro");
+                        newcontato.SubItems.Add("Erro");
                     }
                     else
                     {
                         elementMessage.element.SendKeys(OpenQA.Selenium.Keys.Enter);
+                        newcontato.SubItems.Add("Correto");
                     }
 
                    

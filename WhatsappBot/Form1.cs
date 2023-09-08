@@ -2,16 +2,20 @@ namespace WhatsappBot
 {
     public partial class Form1 : Form
     {
+        private WhatsAppSendMessage WhatsAppSendMessage;
+
+
         public Form1()
         {
             InitializeComponent();
+            WhatsAppSendMessage = new WhatsAppSendMessage(listView1);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            listView1.Columns.Add("Contatos",120);
-            WhatsAppSendMessage w = new WhatsAppSendMessage();
-            w.EnterSite();
+            listView1.Columns.Add("Contatos",80);
+            listView1.Columns.Add("Status", 80);
+            WhatsAppSendMessage.EnterSite();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -26,7 +30,6 @@ namespace WhatsappBot
             }
             else
             {
-                WhatsAppSendMessage w = new WhatsAppSendMessage();
 
                 List<string> pessoa = new List<string>();  
                 string mensagem = richTextBox1.Text;
@@ -36,7 +39,7 @@ namespace WhatsappBot
                     pessoa.Add(listView1.Items[i].Text);
                 }
 
-                w.SendMessage(mensagem, pessoa);
+                WhatsAppSendMessage.SendMessage(mensagem, pessoa);
             }
         }
 
