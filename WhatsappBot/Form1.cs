@@ -13,8 +13,9 @@ namespace WhatsappBot
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            listView1.Columns.Add("Contatos",80);
-            listView1.Columns.Add("Status", 80);
+            listView1.Columns.Add("Telefone",100);
+            listView1.Columns.Add("Nome", 60);
+            listView1.Columns.Add("Status", 60);
             WhatsAppSendMessage.EnterSite();
         }
 
@@ -26,7 +27,7 @@ namespace WhatsappBot
             }
             else if(listView1.Items.Count == 0)
             {
-                MessageBox.Show("Nenhum Contato encontrado");
+                MessageBox.Show("Nenhum Telefone encontrado");
             }
             else
             {
@@ -65,9 +66,33 @@ namespace WhatsappBot
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ListViewItem newcontato = new ListViewItem(textBox1.Text);
-            listView1.Items.Add(newcontato);
-            textBox1.Text = "";
+            string mask = "(99) 99999-9999";
+            string input = maskedTextBox1.Text;
+
+            // Remova todos os caracteres não numéricos da entrada
+            string numericInput = new string(input.Where(char.IsDigit).ToArray());
+
+            // Verifique se o número de dígitos na entrada é igual ao número de dígitos na máscara
+            bool isFilledWithNumbers = numericInput.Length == mask.Count(c => c == '9');
+
+            if (isFilledWithNumbers)
+            {
+                ListViewItem newcontato = new ListViewItem(maskedTextBox1.Text);
+                listView1.Items.Add(newcontato);
+                newcontato.SubItems.Add(textBox2.Text);
+                maskedTextBox1.Text = "";
+                textBox2.Text = "";
+                // O MaskedTextBox está preenchido com números.
+                Console.WriteLine("O MaskedTextBox está preenchido com números.");
+            }
+            else
+            {
+                // O MaskedTextBox não está preenchido com números.
+                Console.WriteLine("O MaskedTextBox não está preenchido com números.");
+            }
+          
+            
+      
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -82,7 +107,7 @@ namespace WhatsappBot
         {
             if (listView1.SelectedItems.Count > 0)
             {
-                listView1.SelectedItems[0].SubItems[0].Text = textBox1.Text ;
+                listView1.SelectedItems[0].SubItems[0].Text = maskedTextBox1.Text ;
             }
         }
 
@@ -100,8 +125,36 @@ namespace WhatsappBot
         {
             if(listView1.SelectedItems.Count > 0)
             {
-                textBox1.Text = listView1.SelectedItems[0].SubItems[0].Text;
+                maskedTextBox1.Text = listView1.SelectedItems[0].SubItems[0].Text;
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if (maskedTextBox1.Text.Length != maskedTextBox1.Mask.Length)
+                maskedTextBox1.ResetText();
+        }
+
+        private void maskedTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+                maskedTextBox1.Mask = "(99) 99999-9999";
+
         }
     }
 }
