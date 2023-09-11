@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "wakicR1xF6M8wN3C6Q6jfhdeaKu/+frKL1IMdyvYW/x0U5Epr3Ny6a094tPmLXoAR0lTGFwGB0KbPsZJrIKQRw==",
   "success": true,
   "projectFilePath": "C:\\Users\\android\\Documents\\GitHub\\whatsapp\\WhatsappBot\\WhatsappBot.csproj",
+=======
+  "dgSpecHash": "Rxa3OhY/J9hkHCiDnbQtkc7ivw5cyk36rdEShf1/FaaCJ7oldTFjBr9CZf+5Hq4jbCym7pnGjw6JGlasLyYzCQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nanny\\OneDrive\\Documentos\\whatsapp\\WhatsappBot\\WhatsappBot.csproj",
+>>>>>>> 22dafa358bc5b1c17c60de3e997d2d1345d06225
   "expectedPackageFiles": [
     "C:\\Users\\android\\.nuget\\packages\\easy.automation\\1.0.0.12\\easy.automation.1.0.0.12.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
