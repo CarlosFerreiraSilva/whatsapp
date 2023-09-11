@@ -10,12 +10,12 @@ namespace WhatsappBot
 {
     public class WhatsAppSendMessage : Web
     {
-            private ListView listView;
+        private ListView listView;
 
-    public WhatsAppSendMessage(ListView listView)
-    {
-        this.listView = listView;
-    }
+        public WhatsAppSendMessage(ListView listView)
+        {
+            this.listView = listView;
+        }
 
         public void EnterSite()
         {
@@ -27,13 +27,10 @@ namespace WhatsappBot
         }
         public void SendMessage(string message, List<string> to, List<string> nome)
         {
-<<<<<<< HEAD
-            try
-=======
             foreach (var a in nome)
             {
                 MessageBox.Show(a);
-            }    
+            }
             StartBrowser(TypeDriver.GoogleChorme);
 
             Navigate("https://web.whatsapp.com/");
@@ -44,32 +41,8 @@ namespace WhatsappBot
 
             var i = 0;
             foreach (var item in to)
->>>>>>> 22dafa358bc5b1c17c60de3e997d2d1345d06225
             {
-                StartBrowser(TypeDriver.GoogleChorme);
 
-<<<<<<< HEAD
-                Navigate("https://web.whatsapp.com/");
-
-                WaitForLoad();
-
-                Thread.Sleep(TimeSpan.FromSeconds(18));
-
-                foreach (var item in to)
-                {
-                    Thread.Sleep(TimeSpan.FromSeconds(2));
-
-                    var elementSearch = AssignValue(TypeElement.Xpath, "//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[1]/p", item);
-
-                    elementSearch.element.Clear();
-
-                    elementSearch.element.SendKeys(OpenQA.Selenium.Keys.Enter);
-
-                    var elementMessage = AssignValue(TypeElement.Xpath, "//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]", message);
-
-                    elementMessage.element.SendKeys(OpenQA.Selenium.Keys.Enter);
-                }
-=======
                 try
                 {
 
@@ -85,7 +58,7 @@ namespace WhatsappBot
 
                     ListViewItem newcontato = new ListViewItem();
 
-                    
+
 
                     if (elementMessage.Sucesso == false)
                     {
@@ -97,7 +70,7 @@ namespace WhatsappBot
                         newcontato.SubItems.Add("Correto");
                     }
 
-                   
+
                 }
                 catch (NullReferenceException ex)
                 {
@@ -105,14 +78,8 @@ namespace WhatsappBot
                     MessageBox.Show("Erro");
                 }
                 i++;
-     
->>>>>>> 22dafa358bc5b1c17c60de3e997d2d1345d06225
+
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Algum erro interno ou contato digitado errado");
-            }
-          
 
         }
     }

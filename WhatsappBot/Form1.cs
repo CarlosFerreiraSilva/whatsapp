@@ -13,16 +13,13 @@ namespace WhatsappBot
 
         private void Form1_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            listView1.Columns.Add("Contatos",120);
-            //WhatsAppSendMessage w = new WhatsAppSendMessage();
-            //w.EnterSite();
-=======
+
+
             listView1.Columns.Add("Telefone",100);
             listView1.Columns.Add("Nome", 60);
             listView1.Columns.Add("Status", 60);
             WhatsAppSendMessage.EnterSite();
->>>>>>> 22dafa358bc5b1c17c60de3e997d2d1345d06225
+
         }
 
         private void button1_Click(object sender, EventArgs e)
