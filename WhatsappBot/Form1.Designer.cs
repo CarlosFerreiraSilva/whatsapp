@@ -31,6 +31,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,12 +44,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(435, 170);
+            this.button1.Location = new System.Drawing.Point(517, 170);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 23);
             this.button1.TabIndex = 0;
@@ -55,7 +61,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(435, 74);
+            this.label1.Location = new System.Drawing.Point(435, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 15);
             this.label1.TabIndex = 3;
@@ -64,6 +70,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label4);
@@ -74,17 +85,68 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.richTextBox2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(583, 217);
+            this.groupBox1.Size = new System.Drawing.Size(657, 217);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informações";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(394, 37);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(18, 23);
+            this.button7.TabIndex = 20;
+            this.button7.Text = "2";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(367, 37);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(18, 23);
+            this.button6.TabIndex = 19;
+            this.button6.Text = "1";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(337, 170);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "add nome";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(570, 84);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(76, 51);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "Exportar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(570, 27);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(76, 51);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Importar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(435, 48);
+            this.maskedTextBox1.Location = new System.Drawing.Point(435, 37);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(129, 23);
             this.maskedTextBox1.TabIndex = 15;
@@ -93,7 +155,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(435, 92);
+            this.textBox2.Location = new System.Drawing.Point(435, 81);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(129, 23);
             this.textBox2.TabIndex = 14;
@@ -102,11 +164,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(435, 30);
+            this.label4.Location = new System.Drawing.Point(435, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 15);
+            this.label4.Size = new System.Drawing.Size(59, 15);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Telefone";
+            this.label4.Text = "Telefone *";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // richTextBox1
@@ -120,9 +182,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(435, 121);
+            this.button2.Location = new System.Drawing.Point(435, 113);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 23);
+            this.button2.Size = new System.Drawing.Size(129, 22);
             this.button2.TabIndex = 8;
             this.button2.Text = "Adicionar";
             this.button2.UseVisualStyleBackColor = true;
@@ -158,14 +220,23 @@
             this.label2.Text = "Mensagem";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(252, 59);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(160, 134);
+            this.richTextBox2.TabIndex = 21;
+            this.richTextBox2.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.ClientSize = new System.Drawing.Size(606, 245);
+            this.ClientSize = new System.Drawing.Size(681, 245);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ZAP Infinity";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -187,5 +258,11 @@
         private Label label4;
         private MaskedTextBox maskedTextBox1;
         private TextBox textBox2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Button button7;
+        private Button button6;
+        private RichTextBox richTextBox2;
     }
 }

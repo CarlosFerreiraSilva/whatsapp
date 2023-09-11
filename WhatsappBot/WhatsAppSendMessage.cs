@@ -25,9 +25,12 @@ namespace WhatsappBot
 
             //WaitForLoad();
         }
-        public void SendMessage(string message, List<string> to)
+        public void SendMessage(string message, List<string> to, List<string> nome)
         {
-            
+            foreach (var a in nome)
+            {
+                MessageBox.Show(a);
+            }    
             StartBrowser(TypeDriver.GoogleChorme);
 
             Navigate("https://web.whatsapp.com/");
@@ -36,8 +39,10 @@ namespace WhatsappBot
 
             Thread.Sleep(TimeSpan.FromSeconds(18));
 
+            var i = 0;
             foreach (var item in to)
             {
+
                 try
                 {
 
@@ -47,7 +52,9 @@ namespace WhatsappBot
 
                     elementSearch.element.SendKeys(OpenQA.Selenium.Keys.Enter);
 
-                    var elementMessage = AssignValue(TypeElement.Xpath, "//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]", message);
+                    string mensagemcustomizada = message.Replace("{nome}", nome[i]);
+
+                    var elementMessage = AssignValue(TypeElement.Xpath, "//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]", mensagemcustomizada);
 
                     ListViewItem newcontato = new ListViewItem();
 
@@ -70,6 +77,7 @@ namespace WhatsappBot
 
                     MessageBox.Show("Erro");
                 }
+                i++;
      
             }
 
